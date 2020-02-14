@@ -1,19 +1,16 @@
-const path = require('path');
+const path = require("path");
 
-const Template = require('./Template');
+const Template = require("./Template");
 
 const defaultOptions = {
-  templateFileExtension: 'md'
+  templateFileExtension: "md",
+  templatesDirectory: "emails"
 };
 
 class Macaw {
   constructor({ templatesDirectory, ...options }) {
-    if (!templatesDirectory) {
-      throw Error('No `templatesDirectory` specified.');
-    }
-
-    this.templatesDirectory = path.resolve(templatesDirectory);
     this.options = { ...defaultOptions, ...options };
+    this.templatesDirectory = path.resolve(this.options.templatesDirectory);
   }
 
   template(templateName, data) {

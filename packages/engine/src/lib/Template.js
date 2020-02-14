@@ -6,6 +6,7 @@ class Template {
   }
 
   loadFile(templatePath) {
+    console.log(templatePath);
     // TODO
   }
 
