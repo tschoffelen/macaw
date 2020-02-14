@@ -14,7 +14,7 @@ Macaw is a suite of tools that helps you design and send transactional emails. I
 - A Mailchimp-esque drag-and-drop email builder
 - A email sending service
 
-## Quick example
+# Quick example
 
 Some lines of code usually say more than any documentation could, so here's an optimistic example of how this library could be used:
 
@@ -39,7 +39,7 @@ await template.send({
 });
 ```
 
-## Getting started
+# Getting started
 
 Quickly get up and running by executing this command in your project's root directory:
 
@@ -54,8 +54,9 @@ This will:
 
 Take a look at the files created in the `emails` directory, and use the documentation links below to learn what's next.
 
-## Documentation
+# Documentation
 
 - [Templates and layouts]()
 - [Email sending providers]()
-- [Custom providers]()
+- [Custom provider implementations]()
+- [API reference]()
