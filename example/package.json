@@ -1,0 +1,11 @@
+{
+  "name": "@macaw-email/example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@macaw-email/engine": "*",
+    "@macaw-email/provider-sendgrid": "*"
+  }
+}

@@ -1,0 +1,8 @@
+*.log
+lib-cov
+coverage
+*.lcov
+.nyc_output
+node_modules/
+.env
+package-lock.json

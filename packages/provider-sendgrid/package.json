@@ -1,0 +1,19 @@
+{
+  "name": "@macaw-email/provider-sendgrid",
+  "version": "1.0.0",
+  "description": "Sendgrid provider adapter for Macaw.",
+  "main": "src/index.js",
+  "author": "Thomas Schoffelen <thomas@schof.co>",
+  "license": "ISC",
+  "homepage": "https://macaw.email/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/macaw-email/macaw.git"
+  },
+  "bugs": {
+    "url": "https://github.com/macaw-email/macaw/issues"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^6.5.2"
+  }
+}

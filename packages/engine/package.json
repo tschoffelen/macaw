@@ -1,0 +1,22 @@
+{
+  "name": "@macaw-email/engine",
+  "version": "1.0.0",
+  "description": "Template engine for Macaw.",
+  "main": "src/index.js",
+  "author": "Thomas Schoffelen <thomas@schof.co>",
+  "license": "ISC",
+  "homepage": "https://macaw.email/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/macaw-email/macaw.git"
+  },
+  "bugs": {
+    "url": "https://github.com/macaw-email/macaw/issues"
+  },
+  "dependencies": {
+    "front-matter": "^3.1.0",
+    "mjml": "^4.5.1",
+    "showdown": "^1.9.1",
+    "twig": "^1.14.0"
+  }
+}
