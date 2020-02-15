@@ -1,9 +1,10 @@
-<p align=center><img src=".github/logo.svg" alt="Macaw" /></p>
+<p align=center><img src="https://schof.co/f/htn/logo.svg" alt="Macaw" /></p>
 
 # Scalable email templates for node.js
 
 [![Build Status](https://travis-ci.com/macaw-email/macaw.svg?branch=master)](https://travis-ci.com/macaw-email/macaw)
-[![codecov](https://codecov.io/gh/macaw-email/macaw/branch/master/graph/badge.svg)](https://codecov.io/gh/macaw-email/macaw)
+[![Codecov](https://codecov.io/gh/macaw-email/macaw/branch/master/graph/badge.svg)](https://codecov.io/gh/macaw-email/macaw)
+[![NPM](https://img.shields.io/npm/v/macaw.svg)](https://npmjs.org/macaw)
 
 Macaw is a suite of tools that helps you design and send transactional emails. It aims to solve the problems that usually occur at the intersection of design, copywriting and engineering.
 
