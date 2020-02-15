@@ -13,10 +13,16 @@
   "bugs": {
     "url": "https://github.com/macaw-email/macaw/issues"
   },
+  "scripts": {
+    "test": "jest"
+  },
   "dependencies": {
     "front-matter": "^3.1.0",
     "mjml": "^4.5.1",
     "showdown": "^1.9.1",
     "twig": "^1.14.0"
+  },
+  "devDependencies": {
+    "jest": "^25.1.0"
   }
 }

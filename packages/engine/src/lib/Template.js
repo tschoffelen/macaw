@@ -43,6 +43,17 @@ class Template {
       filePath: this.layoutFilePath
     });
 
+    if (errors.length) {
+      const err = new Error(
+        errors.reduce(
+          (errors, error) => `${errors}\n - ${error.formattedMessage}`,
+          "Invalid MJML:"
+        )
+      );
+      err.errors = errors;
+      throw err;
+    }
+
     return html;
   }
 
@@ -52,7 +63,11 @@ class Template {
     }
 
     const html = this.render();
-    return this.options.provider.send({ ...sendOptions, html });
+    return this.options.provider.send({
+      ...sendOptions,
+      data: this.data,
+      html
+    });
   }
 }
 

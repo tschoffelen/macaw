@@ -1,4 +1,5 @@
 const path = require("path");
+const fs = require("fs");
 
 const Template = require("./Template");
 
@@ -15,15 +16,20 @@ const defaultOptions = {
     excludeTrailingPunctuationFromURLs: true
   },
   mjml: {
-    minify: true,
-    validationLevel: "skip"
+    validationLevel: "soft"
   }
 };
 
 class Macaw {
-  constructor({ templatesDirectory, ...options }) {
+  constructor(options = {}) {
     this.options = { ...defaultOptions, ...options };
     this.templatesDirectory = path.resolve(this.options.templatesDirectory);
+
+    if (!fs.existsSync(this.templatesDirectory)) {
+      throw Error(
+        `Templates directory does not exist: ${this.templatesDirectory}`
+      );
+    }
   }
 
   template(templateName, data) {
