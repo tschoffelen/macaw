@@ -4,7 +4,20 @@ const Template = require("./Template");
 
 const defaultOptions = {
   templateFileExtension: "md",
-  templatesDirectory: "emails"
+  templatesDirectory: "emails",
+  layoutsDirectory: "layouts",
+  markdown: {
+    noHeaderId: true,
+    simplifiedAutoLink: true,
+    encodeEmails: false,
+    backslashEscapesHTMLTags: false,
+    ghCodeBlocks: false,
+    excludeTrailingPunctuationFromURLs: true
+  },
+  mjml: {
+    minify: true,
+    validationLevel: "skip"
+  }
 };
 
 class Macaw {

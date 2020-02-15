@@ -8,7 +8,7 @@ const mailer = macaw({
 });
 
 const template = mailer.template("monthly-newsletter", {
-  name: "Example Business"
+  name: "John"
 });
 
 console.log(template.render());
