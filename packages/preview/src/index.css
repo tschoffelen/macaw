@@ -42,8 +42,11 @@ h1 {
   font-size: 15px;
   font-weight: 700;
   line-height: 32px;
-  background: url("logo.svg") no-repeat left;
-  padding-left: 48px;
+}
+
+.logo svg {
+  float: left;
+  margin-right: 16px;
 }
 
 h3 {
@@ -65,12 +68,8 @@ aside {
 }
 
 section {
-  border-bottom: 1px solid #22252d;
+  border-bottom: 2px solid #22252d;
   padding: 24px;
-}
-
-section:first-child {
-  border-bottom: 2px solid #2b2e37;
 }
 
 section:last-child {
@@ -100,16 +99,11 @@ section:last-child {
   outline: none;
 }
 
-.select:after {
-  content: "";
+.select svg {
   position: absolute;
-  width: 10px;
-  height: 10px;
   right: 16px;
   top: 50%;
-  margin-top: -5px;
-  background: url("arrow-down.svg") no-repeat right;
-  background-size: contain;
+  margin-top: -2px;
   pointer-events: none;
 }
 

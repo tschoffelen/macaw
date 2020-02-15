@@ -30,7 +30,57 @@ function App() {
     <>
       <aside>
         <section>
-          <h1 className="logo">Email template preview</h1>
+          <h1 className="logo">
+            <svg width="29" height="32">
+              <g fill="none" fillRule="evenodd">
+                <path
+                  d="M14.549 23.08l-.867-.349c-.039.121-1.195 1.843-1.195 1.843-3.094-.145-4.628 1.182-3.848 1.182h5.018a.334.334 0 00.11-.52l-.363-.423 1.145-1.733z"
+                  fill="#BAA3A5"
+                />
+                <path
+                  d="M25.467 28.853c.913 1.422-1.318 2.915-2.26 1.452l-5.055-7.858c-.912-1.42 1.317-2.919 2.26-1.453l5.055 7.859"
+                  fill="#7ED321"
+                />
+                <path
+                  d="M28.375 29.925c.914 1.422-1.318 2.915-2.258 1.453L21.06 23.52c-.913-1.419 1.316-2.918 2.258-1.452l5.056 7.858"
+                  fill="#1DA029"
+                />
+                <path
+                  d="M16.187 9.438l-7.77 2.046-6.601-9.043c2.668-5.075 12.45-1.995 14.37 6.997z"
+                  fill="#3197F4"
+                />
+                <path
+                  d="M1.816 2.44S4.068.67 6.186 1.673c2.119 1.004 2.119 3.234 1.479 5.734-.32 1.247-1.667 1.434-2.482.733l-1.45-1.226L2.16 3.706 1.816 2.44z"
+                  fill="#DADCE0"
+                />
+                <path
+                  d="M2.691 9.324s-.296-.85.173-1.686c.58.408 1.353.576 2.319.501-.297-2.676-1.42-4.575-3.367-5.698C-.08 3.933-.044 8 2.69 9.324z"
+                  fill="#555555"
+                />
+                <path
+                  d="M5.257 2.728a.587.587 0 11-1.175 0 .587.587 0 011.175 0"
+                  fill="#212123"
+                />
+                <path
+                  d="M16.831 21.63c0 1.127-.948 2.04-2.116 2.04-1.169 0-2.116-.913-2.116-2.04s.947-2.04 2.116-2.04c1.168 0 2.116.913 2.116 2.04"
+                  fill="#ECB323"
+                />
+                <path
+                  d="M5.74 14.16c3.345 6.319 9.664 9.478 18.955 9.478l-6.02-12.154L7.89 6.603 5.183 8.139c-.096.142-.911 3.247.557 6.021z"
+                  fill="#FCCD03"
+                />
+                <path
+                  d="M17.002 20.293c1.225-.001 3.346-2.495 4.46-2.788.792-.208.622 1.86 1.296 1.495 1.432 3.484 3.059 5.848 3.059 5.848-2.412-.764-6.157-2.275-8.815-4.555z"
+                  fill="#0D0A4E"
+                />
+                <path
+                  d="M22.758 19c-1.622.879-3.572 1.391-5.67 1.393-2.963-2.54-7.266-6.437-8.745-9.094-3.86-6.933 4.773-7.707 9.312-1.793 2.05 2.67 3.813 6.356 5.103 9.494"
+                  fill="#095FB5"
+                />
+              </g>
+            </svg>
+            Email template preview
+          </h1>
         </section>
         <section>
           <h3>Select template</h3>
@@ -38,6 +88,13 @@ function App() {
             <select onChange={e => setTemplate(e.target.value)}>
               <option>Monthly newsletter</option>
             </select>
+            <svg width="10" height="7">
+              <path
+                d="M1.18.758L5 4.58 8.82.76 10 1.937l-5 5-5-5z"
+                fill="#171A23"
+                fillRule="nonzero"
+              />
+            </svg>
           </div>
         </section>
         <section>
@@ -47,7 +104,7 @@ function App() {
               onClick={() => setMode("responsive")}
               className={`responsive ${mode === "responsive" ? "active" : ""}`}
             >
-              <svg width="26" height="21" xmlns="http://www.w3.org/2000/svg">
+              <svg width="26" height="21">
                 <g
                   fill="none"
                   fillRule="evenodd"
@@ -67,7 +124,7 @@ function App() {
               onClick={() => setMode("tablet")}
               className={`tablet ${mode === "tablet" ? "active" : ""}`}
             >
-              <svg width="26" height="19" xmlns="http://www.w3.org/2000/svg">
+              <svg width="26" height="19">
                 <g
                   fill="none"
                   fillRule="evenodd"
@@ -87,7 +144,7 @@ function App() {
               onClick={() => setMode("mobile")}
               className={`mobile ${mode === "mobile" ? "active" : ""}`}
             >
-              <svg width="16" height="27" xmlns="http://www.w3.org/2000/svg">
+              <svg width="16" height="27">
                 <g
                   fill="none"
                   fillRule="evenodd"
@@ -125,7 +182,7 @@ function App() {
           <div className="frame-inner">
             <iframe
               frameBorder={0}
-              src={`http://localhost:4444/render?template=${encodeURIComponent(
+              src={`http://localhost:4449/render?template=${encodeURIComponent(
                 template
               )}&data=${encodeURIComponent(json)}`}
             />
