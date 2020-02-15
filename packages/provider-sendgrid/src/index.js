@@ -8,7 +8,7 @@ module.exports = ({ apiKey }) => {
 
   return {
     sendgrid,
-    send: function sendViaSendgrid() {
+    send: function sendViaSendgrid(data) {
       // TODO: send via Sendgrid instance
     }
   };

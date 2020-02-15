@@ -45,6 +45,15 @@ class Template {
 
     return html;
   }
+
+  send(sendOptions) {
+    if (!this.options.provider) {
+      throw Error("No provider set to send email with.");
+    }
+
+    const html = this.render();
+    return this.options.provider.send({ ...sendOptions, html });
+  }
 }
 
 module.exports = Template;
