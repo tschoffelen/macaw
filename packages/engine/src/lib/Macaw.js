@@ -44,4 +44,6 @@ class Macaw {
   }
 }
 
+Macaw.defaultOptions = defaultOptions;
+
 module.exports = Macaw;
