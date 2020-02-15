@@ -6,14 +6,14 @@ node_js:
   - 13
 cache: yarn
 
-before_install:
-  - cd packages/engine
-
-install:
-  - yarn
-
 script:
+  - cd packages/engine
+  - yarn
   - yarn test --coverage
-
-after_script:
   - bash <(curl -s https://codecov.io/bash)
+  - cd ../..
+  - cd packages/provider-sendgrid
+  - yarn
+  - yarn test --coverage
+  - bash <(curl -s https://codecov.io/bash)
+  - cd ../..
