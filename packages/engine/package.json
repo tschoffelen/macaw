@@ -13,6 +13,14 @@
   "bugs": {
     "url": "https://github.com/macaw-email/macaw/issues"
   },
+  "keywords": [
+    "emails",
+    "templates",
+    "templating",
+    "email",
+    "mailer",
+    "email-templates"
+  ],
   "engines": {
     "node": ">=10"
   },
