@@ -4,8 +4,8 @@
   "description": "Sendgrid provider adapter for Macaw.",
   "main": "src/index.js",
   "author": "Thomas Schoffelen <thomas@schof.co>",
-  "license": "ISC",
-  "homepage": "https://macaw.email/",
+  "license": "MIT",
+  "homepage": "https://macaw.email",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/macaw-email/macaw.git"
