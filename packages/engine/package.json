@@ -17,7 +17,9 @@
     "node": ">=10"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "prepublishOnly": "cp ../../README.md README.md",
+    "postpublish": "rm README.md"
   },
   "dependencies": {
     "front-matter": "^3.1.0",
