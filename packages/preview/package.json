@@ -1,0 +1,43 @@
+{
+  "name": "@macaw-email/preview",
+  "version": "1.0.0-alpha.1",
+  "description": "Email template preview app for Macaw.",
+  "main": "src/index.js",
+  "author": "Thomas Schoffelen <thomas@schof.co>",
+  "license": "MIT",
+  "homepage": "https://macaw.email",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/macaw-email/macaw.git"
+  },
+  "bugs": {
+    "url": "https://github.com/macaw-email/macaw/issues"
+  },
+  "dependencies": {
+    "codemirror": "^5.51.0",
+    "jsonlint-mod": "^1.7.5",
+    "react": "^16.12.0",
+    "react-codemirror2": "^6.0.0",
+    "react-dom": "^16.12.0",
+    "react-scripts": "3.4.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
