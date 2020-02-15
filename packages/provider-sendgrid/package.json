@@ -14,7 +14,7 @@
     "url": "https://github.com/macaw-email/macaw/issues"
   },
   "engines": {
-    "node": ">=9"
+    "node": ">=10"
   },
   "scripts": {
     "test": "jest"
