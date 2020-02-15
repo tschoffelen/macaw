@@ -6,7 +6,11 @@ node_js:
   - 13
 cache: yarn
 
+before_install:
+  - cd packages/engine
+
 install:
-  - cd packages/engine && yarn
+  - yarn
+
 script:
-  - cd packages/engine && yarn test --coverage
+  - yarn test --coverage
