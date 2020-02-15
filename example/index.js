@@ -1,4 +1,4 @@
-const macaw = require("@macaw-email/engine");
+const macaw = require("macaw");
 const sendgrid = require("@macaw-email/provider-sendgrid");
 
 const mailer = macaw({

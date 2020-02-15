@@ -5,7 +5,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "@macaw-email/engine": "*",
+    "macaw": "*",
     "@macaw-email/provider-sendgrid": "*"
   }
 }

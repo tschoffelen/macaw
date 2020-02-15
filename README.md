@@ -22,7 +22,7 @@ Macaw is a suite of tools that helps you design and send transactional emails. I
 Some lines of code usually say more than any documentation could, so here's an optimistic example of how this library could be used:
 
 ```js
-const macaw = require("@macaw-email/engine");
+const macaw = require("macaw");
 const sendgrid = require("@macaw-email/provider-sendgrid");
 
 const mailer = macaw({
@@ -53,7 +53,7 @@ npx macaw init
 This will:
 
 1. Create a `emails` directory with an example template and layout file.
-2. Add `@macaw-email/engine` to your package.json file.
+2. Add `macaw` to your package.json file.
 
 Take a look at the files created in the `emails` directory, and use the documentation links below to learn what's next.
 

@@ -1,5 +1,5 @@
 {
-  "name": "@macaw-email/engine",
+  "name": "macaw",
   "version": "1.0.0",
   "description": "Template engine for Macaw.",
   "main": "src/index.js",
