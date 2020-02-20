@@ -34,3 +34,4 @@ deploy:
   script: npx lerna publish patch --yes
   on:
     branch: master
+    node_js: stable
