@@ -6,7 +6,6 @@
   "command": {
     "publish": {
       "allowBranch": "master",
-      "gitRemote": "upstream",
       "message": "chore(release): %s",
       "ignoreChanges": [
         "**/*.md",
