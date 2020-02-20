@@ -5,19 +5,19 @@ node_js:
   - 10
   - stable
 
-cache:
-  - npm
-  - yarn
-
 git:
   depth: 5
 
 install:
+  - yarn
   - npx lerna bootstrap
 
+cache:
+  - npm
+  - yarn
+
 script:
-  - cd packages/macaw && yarn test --coverage && cd ../..
-  - cd packages/provider-sendgrid && yarn test --coverage && cd ../..
+  - yarn test
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)

@@ -11,6 +11,7 @@
     "node": ">=10"
   },
   "scripts": {
+    "test": "lerna run test",
     "lint": "prettier --write \"{packages/*/src/**,example/*}\""
   },
   "husky": {
