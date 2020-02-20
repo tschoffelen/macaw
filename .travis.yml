@@ -31,8 +31,7 @@ before_deploy:
 deploy:
   provider: script
   skip_cleanup: true
-  script: npx lerna publish patch --yes
+  script: npx lerna publish from-git --yes
   on:
     tags: true
-    branch: master
     node_js: stable
