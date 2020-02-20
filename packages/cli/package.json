@@ -1,6 +1,6 @@
 {
   "name": "@macaw-email/cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CLI for Macaw.",
   "main": "src/index.js",
   "author": "Thomas Schoffelen <thomas@schof.co>",
@@ -20,7 +20,7 @@
     "start": "./src/index.js"
   },
   "dependencies": {
-    "@macaw-email/preview-ui": "^1.0.0",
+    "@macaw-email/preview-ui": "^1.0.1",
     "chalk": "^3.0.0",
     "commander": "^4.1.1",
     "mrm-core": "^4.0.2"
