@@ -1,6 +1,6 @@
 {
   "name": "@macaw-email/preview-ui",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Email template preview app for Macaw.",
   "main": "build/index.html",
   "author": "Thomas Schoffelen <thomas@schof.co>",
@@ -28,9 +28,9 @@
   },
   "eslintConfig": {
     "extends": "react-app",
-   "rules": {
-     "jsx-a11y/anchor-is-valid": "off"
-   }
+    "rules": {
+      "jsx-a11y/anchor-is-valid": "off"
+    }
   },
   "browserslist": {
     "production": [

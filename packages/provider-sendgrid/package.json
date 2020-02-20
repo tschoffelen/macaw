@@ -1,6 +1,6 @@
 {
   "name": "@macaw-email/provider-sendgrid",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Sendgrid provider adapter for Macaw.",
   "main": "src/index.js",
   "author": "Thomas Schoffelen <thomas@schof.co>",
