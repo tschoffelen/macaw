@@ -181,6 +181,7 @@ function App() {
         <div className={`frame ${mode}`}>
           <div className="frame-inner">
             <iframe
+              title="Preview"
               frameBorder={0}
               src={`http://localhost:4449/render?template=${encodeURIComponent(
                 template
