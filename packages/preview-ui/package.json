@@ -1,5 +1,5 @@
 {
-  "name": "@macaw-email/preview",
+  "name": "@macaw-email/preview-ui",
   "version": "1.0.0-alpha.1",
   "description": "Email template preview app for Macaw.",
   "main": "src/index.js",

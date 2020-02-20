@@ -1,0 +1,27 @@
+<mjml>
+    <mj-head>
+        <mj-title>{{subject}}</mj-title>
+        <mj-preview>{{preview}}</mj-preview>
+        <mj-breakpoint width="440px"/>
+    </mj-head>
+    <mj-body>
+        <mj-section background-color="#445165">
+            <mj-column>
+                <mj-text color="#ffffff" font-size="24px" font-weight="700">
+                    {{title}}
+                </mj-text>
+                <mj-text color="#ffffff" font-size="18px" font-weight="400">
+                    {{subtitle}}
+                </mj-text>
+            </mj-column>
+        </mj-section>
+
+        <mj-section background-color="#fbfbfb">
+            <mj-column>
+                <mj-text color="#000000" font-size="15px" line-height="25px">
+                    {{body | raw}}
+                </mj-text>
+            </mj-column>
+        </mj-section>
+    </mj-body>
+</mjml>
