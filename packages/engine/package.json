@@ -1,6 +1,6 @@
 {
   "name": "@macaw-email/engine",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Template engine for Macaw.",
   "main": "src/index.js",
   "author": "Thomas Schoffelen <thomas@schof.co>",

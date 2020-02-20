@@ -1,6 +1,6 @@
 {
   "name": "@macaw-email/cli",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "CLI for Macaw.",
   "main": "src/index.js",
   "author": "Thomas Schoffelen <thomas@schof.co>",
@@ -20,16 +20,16 @@
     "start": "./src/index.js"
   },
   "dependencies": {
-    "@macaw-email/engine": "^1.0.2",
-    "@macaw-email/preview-ui": "^1.0.2",
-    "chalk": "^3.0.0",
-    "commander": "^4.1.1",
-    "mrm-core": "^4.0.2",
-    "express": "^4.17.1",
-    "socket.io": "^2.3.0",
-    "get-port": "^5.1.1",
     "@includable/open-browser": "^1.1.0",
-    "chokidar": "^3.3.1"
+    "@macaw-email/engine": "^1.0.3",
+    "@macaw-email/preview-ui": "^1.0.3",
+    "chalk": "^3.0.0",
+    "chokidar": "^3.3.1",
+    "commander": "^4.1.1",
+    "express": "^4.17.1",
+    "get-port": "^5.1.1",
+    "mrm-core": "^4.0.2",
+    "socket.io": "^2.3.0"
   },
   "devDependencies": {
     "jest": "^25.1.0"
