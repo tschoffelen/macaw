@@ -34,7 +34,7 @@ function App() {
   useEffect(() => {
     socket.on("templates", data => {
       setTemplates(data);
-      if (data.length && (!template || !data.includes(template))) {
+      if (data.length && !template) {
         setTemplate(data[0]);
       }
     });
