@@ -8,3 +8,4 @@ node_modules/
 package-lock.json
 build
 packages/cli/emails
+packages/macaw/README.md

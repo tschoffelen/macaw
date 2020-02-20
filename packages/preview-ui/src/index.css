@@ -116,7 +116,11 @@ section:last-child {
   user-select: none;
 }
 
-.toggle a {
+.toggle button {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  outline: 0;
   flex: 1;
   flex-basis: 33%;
   height: 64px;
@@ -131,33 +135,38 @@ section:last-child {
   position: relative;
 }
 
-.toggle a.active {
+.toggle button,
+.toggle button * {
+  transition: all 0.1s ease;
+}
+
+.toggle button.active {
   background: #fff;
   color: #171a23;
   opacity: 1;
   cursor: default;
 }
 
-.toggle a svg {
+.toggle button svg {
   position: absolute;
   top: 24%;
   transform: translateX(-50%);
   left: 50%;
 }
 
-.toggle a svg path[fillRule="nonzero"] {
+.toggle button svg path[fill-rule="nonzero"] {
   fill: #fff !important;
 }
 
-.toggle a.active svg path[fillRule="nonzero"] {
+.toggle button.active svg path[fill-rule="nonzero"] {
   fill: #171a23 !important;
 }
 
-.toggle a:first-child svg {
+.toggle button:first-child svg {
   top: 22%;
 }
 
-.toggle a:last-child svg {
+.toggle button:last-child svg {
   top: 17%;
 }
 

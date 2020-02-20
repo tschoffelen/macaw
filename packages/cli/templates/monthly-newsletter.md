@@ -5,7 +5,7 @@ subtitle: November 2019
 preview: Here's your news for November.
 ---
 
-Hi {{ name }},
+Hi {{ to.name }},
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque felis ante, ullamcorper ut est a, pellentesque sodales libero. Donec tempor velit nec purus dignissim viverra. Pellentesque aliquet nisl et ex laoreet accumsan vel vitae est. Nunc sollicitudin purus sed massa elementum, quis venenatis tellus laoreet. Cras semper sodales nunc, placerat hendrerit ex aliquam non.
 

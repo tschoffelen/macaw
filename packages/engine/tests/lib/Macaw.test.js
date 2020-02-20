@@ -5,7 +5,7 @@ const Template = require("../../src/lib/Template");
 
 test("engine fails with non-existing default templates directory", () => {
   const callConstructor = () => {
-    const engine = new Macaw();
+    new Macaw();
   };
 
   expect(callConstructor).toThrow(/templates directory does not exist/i);
@@ -13,7 +13,7 @@ test("engine fails with non-existing default templates directory", () => {
 
 test("engine fails with non-existing custom templates directory", () => {
   const callConstructor = () => {
-    const engine = new Macaw({
+    new Macaw({
       templatesDirectory: "test/emails-nonexisting"
     });
   };

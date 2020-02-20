@@ -1,7 +1,7 @@
 {
-  "name": "@macaw-email/cli",
+  "name": "@macaw-email/engine",
   "version": "1.0.2",
-  "description": "CLI for Macaw.",
+  "description": "Template engine for Macaw.",
   "main": "src/index.js",
   "author": "Thomas Schoffelen <thomas@schof.co>",
   "license": "MIT",
@@ -16,20 +16,17 @@
   "engines": {
     "node": ">=10"
   },
+  "bin": {
+    "macaw": "./cli.js"
+  },
   "scripts": {
-    "start": "./src/index.js"
+    "test": "jest"
   },
   "dependencies": {
-    "@macaw-email/engine": "^1.0.2",
-    "@macaw-email/preview-ui": "^1.0.2",
-    "chalk": "^3.0.0",
-    "commander": "^4.1.1",
-    "mrm-core": "^4.0.2",
-    "express": "^4.17.1",
-    "socket.io": "^2.3.0",
-    "get-port": "^5.1.1",
-    "@includable/open-browser": "^1.1.0",
-    "chokidar": "^3.3.1"
+    "front-matter": "^3.1.0",
+    "mjml": "^4.5.1",
+    "showdown": "^1.9.1",
+    "twig": "^1.14.0"
   },
   "devDependencies": {
     "jest": "^25.1.0"

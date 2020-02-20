@@ -19,7 +19,8 @@
     "react": "^16.12.0",
     "react-codemirror2": "^6.0.0",
     "react-dom": "^16.12.0",
-    "react-scripts": "3.4.0"
+    "react-scripts": "3.4.0",
+    "socket.io-client": "^2.3.0"
   },
   "scripts": {
     "prepublishOnly": "react-scripts build",

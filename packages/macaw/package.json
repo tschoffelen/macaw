@@ -1,8 +1,8 @@
 {
   "name": "macaw",
   "version": "1.0.2",
-  "description": "Template engine for Macaw.",
-  "main": "src/index.js",
+  "description": "Scalable email tooling for transactional emails.",
+  "main": "./index.js",
   "author": "Thomas Schoffelen <thomas@schof.co>",
   "license": "MIT",
   "homepage": "https://macaw.email",
@@ -28,18 +28,11 @@
     "macaw": "./cli.js"
   },
   "scripts": {
-    "test": "jest",
     "prepublishOnly": "cp ../../README.md README.md",
-    "postpublish": "rm README.md"
+    "postpublish": "rm -rf README.md"
   },
   "dependencies": {
     "@macaw-email/cli": "^1.0.2",
-    "front-matter": "^3.1.0",
-    "mjml": "^4.5.1",
-    "showdown": "^1.9.1",
-    "twig": "^1.14.0"
-  },
-  "devDependencies": {
-    "jest": "^25.1.0"
+    "@macaw-email/engine": "^1.0.2"
   }
 }
