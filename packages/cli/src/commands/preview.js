@@ -49,17 +49,7 @@ module.exports = async (dir = "emails") => {
   const io = socketio(srv);
 
   app.use(
-    express.static(
-      path.resolve(
-        __dirname,
-        "..",
-        "..",
-        "node_modules",
-        "@macaw-email",
-        "preview-ui",
-        "build"
-      )
-    )
+    express.static(path.dirname(require.resolve("@macaw-email/preview-ui")))
   );
 
   io.on("connection", socket => {
