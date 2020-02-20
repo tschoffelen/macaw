@@ -25,6 +25,7 @@ after_success:
 before_deploy:
   - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
   - git remote set-url origin https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git
+  - git fetch origin master
   - git checkout master
   - git pull origin master
 
