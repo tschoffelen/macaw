@@ -1,3 +1,4 @@
+os: linux
 language: node_js
 
 node_js:
@@ -29,7 +30,7 @@ before_deploy:
 
 deploy:
   provider: script
-  cleanup: false
+  skip_cleanup: true
   script: npx lerna publish --yes
   on:
     branch: master
