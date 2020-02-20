@@ -22,7 +22,9 @@
   },
   "dependencies": {
     "chalk": "^3.0.0",
-    "commander": "^4.1.1"
+    "commander": "^4.1.1",
+    "mrm-core": "^4.0.2",
+    "@macaw-email/preview-ui": ">=1.0.0-alpha.0"
   },
   "devDependencies": {
     "jest": "^25.1.0"

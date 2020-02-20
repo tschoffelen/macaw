@@ -10,6 +10,11 @@ program
   .description("Set up your emails directory structure.")
   .action(() => require("./commands/init")());
 
+program
+  .command("preview")
+  .description("Set up your emails directory structure.")
+  .action(() => require("./commands/preview")());
+
 program.on("command:*", () => {
   console.error(
     "Invalid command: %s\nSee --help for a list of available commands.",
@@ -18,14 +23,8 @@ program.on("command:*", () => {
   process.exit(1);
 });
 
-let called = false;
-program.on("command", () => {
-  called = true;
-});
-
 if (process.argv.length === 2) {
-  program.help();
-  process.exit(1);
+  return program.emit("command:preview");
 }
 
 program.version("macaw " + pkg.version, "-v, --version").parse(process.argv);

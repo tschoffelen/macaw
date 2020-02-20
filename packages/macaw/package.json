@@ -24,6 +24,9 @@
   "engines": {
     "node": ">=10"
   },
+  "bin": {
+    "macaw": "./cli.js"
+  },
   "scripts": {
     "test": "jest",
     "prepublishOnly": "cp ../../README.md README.md",
@@ -33,7 +36,8 @@
     "front-matter": "^3.1.0",
     "mjml": "^4.5.1",
     "showdown": "^1.9.1",
-    "twig": "^1.14.0"
+    "twig": "^1.14.0",
+    "@macaw-email/cli": ">=1.0.0-alpha.0"
   },
   "devDependencies": {
     "jest": "^25.1.0"

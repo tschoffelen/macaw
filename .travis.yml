@@ -1,18 +1,40 @@
 language: node_js
+
 node_js:
   - 10
-  - 12
   - stable
-cache: yarn
+
+cache:
+  - npm
+  - yarn
+
+git:
+  depth: 5
+
+cache:
+  directories:
+    - node_modules
+
+install:
+  - npx lerna bootstrap
 
 script:
-  - cd packages/engine
-  - yarn
-  - yarn test --coverage
+  - cd packages/macaw && yarn test --coverage && cd ../..
+  - cd packages/provider-sendgrid && yarn test --coverage && cd ../..
+
+after_success:
   - bash <(curl -s https://codecov.io/bash)
-  - cd ../..
-  - cd packages/provider-sendgrid
-  - yarn
-  - yarn test --coverage
-  - bash <(curl -s https://codecov.io/bash)
-  - cd ../..
+
+before_deploy:
+  - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+  - git remote set-url origin https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git
+  - git checkout master
+  - git pull origin master
+
+deploy:
+  provider: script
+  skip_cleanup: true
+  keep_history: true
+  script: npx lerna publish --yes
+  on:
+    branch: master

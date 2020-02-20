@@ -2,5 +2,28 @@
   "packages": [
     "packages/*"
   ],
+  "npmClient": "yarn",
+  "command": {
+    "publish": {
+      "allowBranch": "master",
+      "gitRemote": "upstream",
+      "message": "chore(release): %s",
+      "ignoreChanges": [
+        "**/*.md",
+        "**/*.lock",
+        "**/*.test.js"
+      ]
+    }
+  },
+  "changelog": {
+    "repo": "macaw-email/macaw",
+    "labels": {
+      "enchancement": ":rocket:(Enhancement)",
+      "bug": ":bug:(Bug Fix)",
+      "doc": ":doc:(Refine Doc)",
+      "feat": ":sparkles:(Feature)"
+    },
+    "cacheDir": ".changelog"
+  },
   "version": "1.0.0-alpha.1"
 }

@@ -1,3 +1,6 @@
 tests/
 coverage/
 src/
+public/
+build/precache-manifest.*.js
+build/service-worker.js
