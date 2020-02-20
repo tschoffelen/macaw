@@ -16,9 +16,6 @@
   "engines": {
     "node": ">=10"
   },
-  "bin": {
-    "macaw": "./cli.js"
-  },
   "scripts": {
     "test": "jest"
   },
