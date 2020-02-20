@@ -31,6 +31,6 @@ before_deploy:
 deploy:
   provider: script
   skip_cleanup: true
-  script: npx lerna publish --yes
+  script: npx lerna publish patch --yes
   on:
     branch: master
