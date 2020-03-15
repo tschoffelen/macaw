@@ -8,8 +8,14 @@ module.exports = ({ apiKey }) => {
 
   return {
     sendgrid,
-    send: function sendViaSendgrid(data) {
-      // TODO: send via Sendgrid instance
+    send: function sendViaSendgrid(options) {
+      return sendgrid.send({
+        subject: options.subject || options.data.subject,
+        to: options.to || options.data.to,
+        from: options.from || options.data.from,
+        ...data,
+        html
+      });
     }
   };
 };
