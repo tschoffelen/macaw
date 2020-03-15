@@ -21,18 +21,3 @@ script:
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
-
-before_deploy:
-  - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
-  - git remote set-url origin https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git
-  - git fetch origin master
-  - git checkout master
-  - git pull origin master
-
-deploy:
-  provider: script
-  skip_cleanup: true
-  script: npx lerna publish from-git --yes
-  on:
-    tags: true
-    node_js: stable
