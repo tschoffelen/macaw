@@ -27,7 +27,7 @@ function App() {
 
   const [json, setJson] = useState(defaultJson);
   const [mode, setMode] = useState("responsive");
-  const [template, setTemplate] = useState("");
+  const [template, setTemplate] = useState(localStorage.lastTemplate || "");
   const [templates, setTemplates] = useState([]);
   const iframe = createRef();
 
@@ -38,7 +38,7 @@ function App() {
         setTemplate(data[0]);
       }
     });
-    if (!template || !templates) {
+    if (!templates) {
       socket.emit("templates");
     }
   }, [template, templates]);
@@ -129,7 +129,12 @@ function App() {
           <section>
             <h3>Select template</h3>
             <div className="select">
-              <select onChange={e => setTemplate(e.target.value)}>
+              <select
+                onChange={e => {
+                  setTemplate(e.target.value);
+                  localStorage.lastTemplate = e.target.value;
+                }}
+              >
                 <option disabled selected={template === ""}>
                   Choose a template
                 </option>
