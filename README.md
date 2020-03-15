@@ -60,7 +60,6 @@ Take a look at the files created in the `emails` directory, and use the document
 
 # Documentation
 
-- [Templates and layouts]()
-- [Email sending providers]()
-- [Custom provider implementations]()
-- [API reference]()
+- [Templates and layouts](docs/templating.md)
+- [Email sending providers](docs/providers.md)
+- [Custom provider implementations](docs/custom-provider.md)
