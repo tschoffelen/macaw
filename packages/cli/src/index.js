@@ -13,7 +13,8 @@ program
 program
   .command("preview")
   .description("Set up your emails directory structure.")
-  .action(() => require("./commands/preview")());
+  .option('-s, --source <path>', 'The source of your templates', 'emails')
+  .action((options) => require("./commands/preview")(options));
 
 program.on("command:*", () => {
   console.error(

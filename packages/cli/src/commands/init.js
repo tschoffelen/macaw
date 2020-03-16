@@ -33,7 +33,7 @@ module.exports = async (dir = "emails") => {
   // Copy over templates
   log("Adding templates...");
   fs.copyFileSync(
-    path.join(templatesPath, "default.mjml"),
+    path.join(templatesPath, "layouts", "default.mjml"),
     path.join(emailsPath, "layouts", "default.mjml")
   );
   fs.copyFileSync(
