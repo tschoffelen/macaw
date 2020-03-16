@@ -32,3 +32,5 @@ Finally start the UI in development mode
 ```
 yarn start
 ```
+
+The development server will start on port 3000. The preview-ui automatically connects to the [socket.io](socket.io) server started by the cli.
