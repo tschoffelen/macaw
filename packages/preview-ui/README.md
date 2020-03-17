@@ -7,7 +7,7 @@ The preview UI for Macaw helps view the compiled mjml file, markdown and JSON da
 
 **[Disclamer] This package is intended to be consumed internally by the macaw cli**
 
-## Getting Started
+## Development setup
 
 These instructions will get you a copy of the Preview UI running ready for development. All commands assume starting at the repositories root folder
 
