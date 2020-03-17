@@ -20,15 +20,15 @@ const render = (socket, engine, [template, data]) => {
   }
 };
 
-module.exports = async (dir = "emails") => {
-  const emailsPath = path.resolve(dir);
+module.exports = async (options) => {
+  const emailsPath = path.resolve(options.source);
 
   // First check if there isn't already an "emails" directory
   if (!fs.existsSync(emailsPath)) {
     error(
       "Hold on!",
       'The directory "' +
-        dir +
+        options.source +
         "\" doesn't seem to exist here.\n\n" +
         "Run " +
         chalk.blue("npx macaw init") +
