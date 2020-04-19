@@ -1,7 +1,7 @@
 {
-  "name": "@macaw-email/engine",
-  "version": "1.0.4",
-  "description": "Template engine for Macaw.",
+  "name": "@macaw-email/storage-fs",
+  "version": "1.0.7",
+  "description": "Default storage engine for Macaw.",
   "main": "src/index.js",
   "author": "Thomas Schoffelen <thomas@schof.co>",
   "license": "MIT",
@@ -19,13 +19,7 @@
   "scripts": {
     "test": "jest"
   },
-  "dependencies": {
-    "@macaw-email/storage-fs": "^1.0.4",
-    "front-matter": "^3.1.0",
-    "mjml": "^4.5.1",
-    "showdown": "^1.9.1",
-    "twig": "^1.14.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "jest": "^25.1.0"
   }
