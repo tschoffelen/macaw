@@ -8,6 +8,9 @@ AWSMock.mock("S3", "getObject", ({ Bucket, Key }, callback) => {
   if (Bucket === "test-bucket" && Key === "file.txt") {
     callback(null, { Body: new Buffer("Test file!\n") });
   }
+  if (Bucket === "test-bucket" && Key === "empty.txt") {
+    callback(null, { Body: new Buffer("") });
+  }
   callback(new Error("File not found"));
 });
 
@@ -21,6 +24,7 @@ test("throws if no bucket name specified", async () => {
 
 test("returns promise on file read", () => {
   const instance = storage("test-bucket", {}, AWS);
+  instance.setOptions({});
 
   expect(instance.getItem("file.txt")).toBeInstanceOf(Promise);
 });
@@ -37,4 +41,10 @@ test("throw error if file does not exist", async () => {
   const instance = storage("test-bucket", {}, AWS);
 
   await expect(instance.getItem("random-file.md")).rejects.toThrow();
+});
+
+test("throw error if file is empty", async () => {
+  const instance = storage("test-bucket", {}, AWS);
+
+  await expect(instance.getItem("empty.txt")).rejects.toThrow();
 });

@@ -61,3 +61,12 @@ test("throw error if file does not exist", async () => {
     /no such file/
   );
 });
+
+test("throw error if file is empty", async () => {
+  const instance = storage();
+  instance.setOptions({
+    templatesDirectory: "tests/fixtures"
+  });
+
+  await expect(instance.getItem("empty-file.txt")).rejects.toThrow(/empty/);
+});
