@@ -1,6 +1,6 @@
 {
   "name": "@macaw-email/engine",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "Template engine for Macaw.",
   "main": "src/index.js",
   "author": "Thomas Schoffelen <thomas@schof.co>",
@@ -20,7 +20,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@macaw-email/storage-fs": "^1.0.4",
+    "@macaw-email/storage-fs": "^1.1.0",
     "front-matter": "^3.1.0",
     "mjml": "^4.5.1",
     "showdown": "^1.9.1",

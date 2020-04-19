@@ -1,6 +1,6 @@
 {
   "name": "@macaw-email/storage-s3",
-  "version": "1.0.7",
+  "version": "1.1.0",
   "description": "AWS S3 storage engine for Macaw.",
   "main": "src/index.js",
   "author": "Thomas Schoffelen <thomas@schof.co>",
