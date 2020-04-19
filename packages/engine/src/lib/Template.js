@@ -1,20 +1,17 @@
-const path = require("path");
-const fs = require("fs");
 const fm = require("front-matter");
-const Twig = require("twig");
-const twig = Twig.twig;
 const showdown = require("showdown");
 const mjml2html = require("mjml");
+const Twig = require("twig");
+const twig = Twig.twig;
 
 class Template {
-  constructor(templatePath, options, data) {
+  constructor(options, data) {
     this.options = options;
     this.data = data;
-    this.loadFile(templatePath);
   }
 
-  loadFile(templatePath) {
-    const content = fs.readFileSync(templatePath, "utf8");
+  async loadFile(templatePath) {
+    const content = await this.options.storage.getItem(templatePath);
     const { attributes, body } = fm(content);
     this.data = { ...attributes, ...this.data };
     this.markdown = body;
@@ -23,13 +20,8 @@ class Template {
       this.data.layout = "default";
     }
 
-    this.layoutFilePath = path.join(
-      path.dirname(templatePath),
-      this.options.layoutsDirectory,
-      `${this.data.layout}.mjml`
-    );
-
-    this.mjml = fs.readFileSync(this.layoutFilePath, "utf8");
+    this.layoutFilePath = `${this.options.layoutsDirectory}/${this.data.layout}.mjml`;
+    this.mjml = await this.options.storage.getItem(this.layoutFilePath);
   }
 
   render() {
@@ -70,5 +62,11 @@ class Template {
     });
   }
 }
+
+Template.load = async (templatePath, options, data) => {
+  const template = new Template(options, data);
+  await template.loadFile(templatePath);
+  return template;
+};
 
 module.exports = Template;

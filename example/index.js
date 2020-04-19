@@ -1,14 +1,16 @@
 const macaw = require("macaw");
 const sendgrid = require("@macaw-email/provider-sendgrid");
 
-const mailer = macaw({
-  provider: sendgrid({
-    apiKey: "aaaaa-bbbbbbb-ccccccc-ddddddd"
-  })
-});
+(async () => {
+  const mailer = macaw({
+    provider: sendgrid({
+      apiKey: "aaaaa-bbbbbbb-ccccccc-ddddddd"
+    })
+  });
 
-const template = mailer.template("monthly-newsletter", {
-  name: "John"
-});
+  const template = await mailer.template("monthly-newsletter", {
+    name: "John"
+  });
 
-console.log(template.render());
+  console.log(template.render());
+})();

@@ -26,15 +26,15 @@ test("engine allows custom templates directory", () => {
     templatesDirectory: "tests/emails"
   });
 
-  expect(engine.templatesDirectory).toEqual(path.resolve("tests/emails"));
+  expect(engine.options.templatesDirectory).toEqual("tests/emails");
 });
 
-test("engine is able to load template", () => {
+test("engine is able to load template", async () => {
   const engine = new Macaw({
     templatesDirectory: "tests/emails"
   });
 
-  const template = engine.template("example-no-frontmatter");
+  const template = await engine.template("example-no-frontmatter");
 
   expect(template).toBeInstanceOf(Template);
   expect(template.options).toEqual(engine.options);

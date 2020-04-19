@@ -1,7 +1,7 @@
 {
-  "name": "@macaw-email/engine",
-  "version": "1.0.4",
-  "description": "Template engine for Macaw.",
+  "name": "@macaw-email/storage-s3",
+  "version": "1.0.7",
+  "description": "AWS S3 storage engine for Macaw.",
   "main": "src/index.js",
   "author": "Thomas Schoffelen <thomas@schof.co>",
   "license": "MIT",
@@ -20,11 +20,8 @@
     "test": "jest"
   },
   "dependencies": {
-    "@macaw-email/storage-fs": "^1.0.4",
-    "front-matter": "^3.1.0",
-    "mjml": "^4.5.1",
-    "showdown": "^1.9.1",
-    "twig": "^1.14.0"
+    "aws-sdk": "^2.658.0",
+    "aws-sdk-mock": "^5.1.0"
   },
   "devDependencies": {
     "jest": "^25.1.0"

@@ -1,5 +1,4 @@
-const path = require("path");
-const fs = require("fs");
+const fsStorage = require("@macaw-email/storage-fs");
 
 const Template = require("./Template");
 
@@ -7,6 +6,7 @@ const defaultOptions = {
   templateFileExtension: "md",
   templatesDirectory: "emails",
   layoutsDirectory: "layouts",
+  storage: fsStorage(),
   markdown: {
     noHeaderId: true,
     simplifiedAutoLink: true,
@@ -23,21 +23,12 @@ const defaultOptions = {
 class Macaw {
   constructor(options = {}) {
     this.options = { ...defaultOptions, ...options };
-    this.templatesDirectory = path.resolve(this.options.templatesDirectory);
-
-    if (!fs.existsSync(this.templatesDirectory)) {
-      throw Error(
-        `Templates directory does not exist: ${this.templatesDirectory}`
-      );
-    }
+    this.options.storage.setOptions({ ...this.options, storage: undefined });
   }
 
-  template(templateName, data) {
-    return new Template(
-      path.join(
-        this.templatesDirectory,
-        `${templateName}.${this.options.templateFileExtension}`
-      ),
+  async template(templateName, data) {
+    return Template.load(
+      `${templateName}.${this.options.templateFileExtension}`,
       this.options,
       data
     );

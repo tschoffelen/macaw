@@ -31,7 +31,7 @@ You can find your API key in the Sendgrid developer console.
 Then you can load a template and send it:
 
 ```js
-const template = mailer.template("monthly-newsletter", {
+const template = await mailer.template("monthly-newsletter", {
   greeting: "Hello, world"
 });
 

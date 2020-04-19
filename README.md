@@ -20,7 +20,7 @@ Macaw is a suite of tools that helps you design and send transactional emails. I
 
 # Quick example
 
-Some lines of code usually say more than any documentation could, so here's an optimistic example of how this library could be used:
+Some lines of code usually say more than any documentation could, so here's a simple example of how this library could be used:
 
 ```js
 const macaw = require("macaw");
@@ -30,7 +30,7 @@ const mailer = macaw({
   provider: sendgrid({ apiKey: "aaaaa-bbbbbbb-ccccccc-ddddddd" })
 });
 
-const template = mailer.template("monthly-newsletter", {
+const template = await mailer.template("monthly-newsletter", {
   customerName: "Example Business",
   greeting: "Hi, Thomas!"
 });
@@ -62,4 +62,5 @@ Take a look at the files created in the `emails` directory, and use the document
 
 - [Templates and layouts](docs/templating.md)
 - [Email sending providers](docs/providers.md)
+- [Template storage sources](docs/storage.md)
 - [Custom provider implementations](docs/custom-provider.md)
