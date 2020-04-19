@@ -31,8 +31,7 @@ class Template {
 
     const mjml = twig({ data: this.mjml }).render({ ...this.data, body });
     const { html, errors } = mjml2html(mjml, {
-      ...this.options.mjml,
-      filePath: this.layoutFilePath
+      ...this.options.mjml
     });
 
     if (errors.length) {
