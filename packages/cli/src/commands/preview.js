@@ -14,8 +14,8 @@ const { getTemplates } = require("../util/fs");
 
 const render = async (socket, engine, [template, data]) => {
   try {
-    const template = await engine.template(template, data);
-    socket.emit("render", await template.render());
+    const instance = await engine.template(template, data);
+    socket.emit("render", await instance.render());
   } catch (e) {
     socket.emit("render-error", e.message);
   }
