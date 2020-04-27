@@ -1,6 +1,6 @@
 {
   "name": "@macaw-email/cli",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "CLI for Macaw.",
   "main": "src/index.js",
   "author": "Thomas Schoffelen <thomas@schof.co>",
