@@ -12,18 +12,19 @@ const macaw = require("@macaw-email/engine");
 const { log, error } = require("../util/log");
 const { getTemplates } = require("../util/fs");
 
-const render = (socket, engine, [template, data]) => {
+const render = async (socket, engine, [template, data]) => {
   try {
-    socket.emit("render", engine.template(template, data).render());
+    const template = await engine.template(template, data);
+    socket.emit("render", await template.render());
   } catch (e) {
     socket.emit("render-error", e.message);
   }
 };
 
-module.exports = async (options) => {
+module.exports = async options => {
   const emailsPath = path.resolve(options.source);
 
-  // First check if there isn't already an "emails" directory
+  // First check if there is an "emails" directory
   if (!fs.existsSync(emailsPath)) {
     error(
       "Hold on!",
