@@ -25,7 +25,7 @@ function App() {
     2
   );
 
-  const [json, setJson] = useState(defaultJson);
+  const [json, setJson] = useState(localStorage.lastJson || defaultJson);
   const [mode, setMode] = useState("responsive");
   const [template, setTemplate] = useState(localStorage.lastTemplate || "");
   const [templates, setTemplates] = useState([]);
@@ -230,7 +230,10 @@ function App() {
             <h3>JSON data</h3>
             <CodeMirror
               value={defaultJson}
-              onChange={(editor, data, value) => setJson(value)}
+              onChange={(editor, data, value) => {
+                setJson(value);
+                localStorage.lastJson = value;
+              }}
               options={{
                 mode: "application/json",
                 theme: "material-darker",
