@@ -77,7 +77,7 @@ class Template {
    * @param {object} sendOptions Options to be passed to provider
    * @returns {Promise<any>} Response from provider
    */
-  async send(sendOptions) {
+  send(sendOptions) {
     if (!this.options.provider) {
       throw Error("No provider set to send email with.");
     }
