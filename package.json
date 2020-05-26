@@ -2,6 +2,7 @@
   "name": "root",
   "private": true,
   "devDependencies": {
+    "documentation": "^13.0.0",
     "husky": ">=4",
     "lerna": "^3.20.2",
     "lint-staged": ">=10",
@@ -12,11 +13,12 @@
   },
   "scripts": {
     "test": "lerna run test -- --coverage",
-    "lint": "prettier --write \"{packages/*/src/**,example/*}\""
+    "lint": "prettier --write \"{packages/*/src/**,example/*}\"",
+    "docs": "documentation build packages/engine/src/lib/** -f md -o ./docs/api.md"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged || true"
+      "pre-commit": "(lint-staged && yarn docs && git add docs/api.md) || true"
     }
   },
   "lint-staged": {
