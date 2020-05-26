@@ -19,7 +19,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "(lint-staged && yarn docs) || true"
+      "pre-commit": "(lint-staged && yarn docs && git add docs/api.md) || true"
     }
   },
   "lint-staged": {

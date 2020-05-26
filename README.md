@@ -64,3 +64,4 @@ Take a look at the files created in the `emails` directory, and use the document
 - [Email sending providers](docs/providers.md)
 - [Template storage sources](docs/storage.md)
 - [Custom provider implementations](docs/custom-provider.md)
+- [API classes reference](docs/api.md)
