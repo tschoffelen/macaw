@@ -29,29 +29,12 @@ const mailer = macaw({ templatesDirectory: 'emails' });
 
 ### Parameters
 
--   `options` **[object][14]** Engine options (optional, default `{}`)
-    -   `options.templateFileExtension` **[string][15]** File extension appended to
-           template files - defaults to `md`.
-    -   `options.templatesDirectory` **[string][15]** Directory to use to look for
-           template files - defaults to `emails`.
-    -   `options.layoutDirectory` **[string][15]** Layouts directory name, needs to be
-           a subdirectory of the templatesDirectory - defaults to `layouts`.
-    -   `options.storage` **[object][14]** Define this to override the default storage
-           engine, needs to be an object with a method `getObject` - defaults to
-           `fsStorage`.
-    -   `options.provider` **[object][14]** Specify email provider, needs to be a
-           object with a method `send`, have a look at any of the included
-           providers (e.g. Sendgrid) for an example on how to create your own.
-    -   `options.markdown` **[object][14]** Set custom options for markdown rendering
-           engine. See the [Showdown docs][16]
-           for more info on valid options.
-    -   `options.mjml` **[object][14]** Set custom options for the
-           [MJML renderer][17].
+-   `options` **[Object][14]** Engine options (optional, default `{}`)
 
 ### template
 
-Load a template from storage, and set any variables that should be made available
-within the template. Returns a Template instance.
+Load a template from storage, and set any variables that should be made
+available within the template. Returns a Template instance.
 
 Note that this method is async!
 
@@ -64,7 +47,7 @@ const template = await mailer.template('newsletter', { name: 'John' });
 -   `templateName` **[string][15]** The name of the template to load, excluding directory name and extension
 -   `data`  
 
-Returns **[Promise][18]&lt;[Template][19]>** 
+Returns **[Promise][16]&lt;[Template][17]>** 
 
 ## Template
 
@@ -75,8 +58,8 @@ method in the `Macaw` class.
 
 ### Parameters
 
--   `options`  
--   `data`  
+-   `options` **[Object][14]** Macaw instance options
+-   `data` **[Object][14]** Variables to pass along to renderer
 
 ### loadFile
 
@@ -86,7 +69,7 @@ Load a template file and its layout from the storage engine.
 
 -   `templatePath` **[string][15]** The template path
 
-Returns **[Promise][18]&lt;void>** 
+Returns **[Promise][16]&lt;void>** 
 
 ### render
 
@@ -103,9 +86,9 @@ at the README file for the provider to find out what to pass along.
 
 #### Parameters
 
--   `sendOptions` **[object][14]** Options to be passed to provider
+-   `sendOptions` **[Object][14]** Options to be passed to provider
 
-Returns **[Promise][18]&lt;any>** Response from provider
+Returns **[Promise][16]&lt;any>** Response from provider
 
 ### load
 
@@ -114,10 +97,10 @@ Static template loading helper.
 #### Parameters
 
 -   `templatePath` **[string][15]** Path of the template in the storage engine
--   `options` **[object][14]** Macaw instance options
--   `data` **[object][14]** Variables to pass along to renderer
+-   `options` **[Object][14]** Macaw instance options
+-   `data` **[Object][14]** Variables to pass along to renderer
 
-Returns **[Promise][18]&lt;[Template][19]>** 
+Returns **[Promise][16]&lt;[Template][17]>** 
 
 [1]: #macaw
 
@@ -149,10 +132,6 @@ Returns **[Promise][18]&lt;[Template][19]>**
 
 [15]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
 
-[16]: https://github.com/showdownjs/showdown#valid-options
+[16]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise
 
-[17]: https://github.com/mjmlio/mjml#inside-nodejs
-
-[18]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise
-
-[19]: #template
+[17]: #template

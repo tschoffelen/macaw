@@ -10,10 +10,16 @@ const twig = Twig.twig;
  * Rather than initiating this class directly, use the `template` factory
  * method in the `Macaw` class.
  *
- * @params {object} options Macaw instance options
- * @params {object} data Variables to pass along to renderer
+ * @param {Object} options Macaw instance options
+ * @param {Object} data Variables to pass along to renderer
  */
 class Template {
+  /**
+   * Constructor.
+   *
+   * @param {Object} options Macaw instance options
+   * @param {Object} data Variables to pass along to renderer
+   */
   constructor(options, data) {
     this.options = options;
     this.data = data;
@@ -74,7 +80,7 @@ class Template {
    * Every provider requires their own set of `sendOptions`, so have a look
    * at the README file for the provider to find out what to pass along.
    *
-   * @param {object} sendOptions Options to be passed to provider
+   * @param {Object} sendOptions Options to be passed to provider
    * @returns {Promise<any>} Response from provider
    */
   send(sendOptions) {
@@ -95,8 +101,8 @@ class Template {
  * Static template loading helper.
  *
  * @param {string} templatePath Path of the template in the storage engine
- * @param {object} options Macaw instance options
- * @param {object} data Variables to pass along to renderer
+ * @param {Object} options Macaw instance options
+ * @param {Object} data Variables to pass along to renderer
  * @returns {Promise<Template>}
  */
 Template.load = async (templatePath, options, data) => {

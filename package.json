@@ -12,10 +12,9 @@
     "node": ">=10"
   },
   "scripts": {
-    "test": "lerna run test -- --coverage && yarn docs-lint",
+    "test": "lerna run test -- --coverage",
     "lint": "prettier --write \"{packages/*/src/**,example/*}\"",
-    "docs": "documentation build packages/engine/src/lib/** -f md -o ./docs/api.md",
-    "docs-lint": "documentation lint packages/engine/src/lib/**"
+    "docs": "documentation build packages/engine/src/lib/** -f md -o ./docs/api.md"
   },
   "husky": {
     "hooks": {
