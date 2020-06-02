@@ -29,12 +29,12 @@ Note that this method is async!
 const template = await mailer.template("newsletter", { name: "John" });
 ```
 
-#### Parameters
+##### Parameters
 
 - **String `templateName`** - The name of the template to load, excluding directory name and extension
 - **Object `data`** - Key-value object with template variable values
 
-#### Return value
+##### Return value
 
 - **Promise&lt;[Template](#template)&gt;** - Template instance
 
@@ -46,7 +46,7 @@ Use the `template()` function on your Macaw instance to initiate a template inst
 
 Parse the template and return raw HTML output.
 
-#### Return value
+##### Return value
 
 - **String** - Parsed template HTML
 
@@ -57,10 +57,22 @@ Send the template via the `provider` specified in the Macaw options.
 Every provider requires their own set of `sendOptions`, so have a look
 at the README file for the provider to find out what to pass along.
 
-#### Parameters
+##### Parameters
 
 - **Object `sendOptions`** - Options to be passed to provider
 
-#### Return value
+##### Return value
 
 - **Promise&lt;any&gt;** - Response from provider
+
+### `template.data`
+
+**Object** Frontmatter data in markdown template.
+
+### `template.markdown`
+
+**String** Raw markdown body of template (with frontmatter stripped out).
+
+### `template.mjml`
+
+**String** Raw MJML layout file content.
