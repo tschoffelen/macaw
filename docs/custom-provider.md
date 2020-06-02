@@ -1,5 +1,5 @@
-| [Macaw](../../README.md) / [Documentation](../../README.md#documentation) |
-| :------------------------------------------------------------------------ |
+| [Macaw](../README.md) / [Documentation](../README.md#documentation) |
+| :------------------------------------------------------------------ |
 
 
 # Custom provider integration
