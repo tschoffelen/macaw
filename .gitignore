@@ -2,8 +2,7 @@
 lib-cov
 coverage
 *.lcov
-.nyc_output
-node_modules/
+node_modules
 .env
 package-lock.json
 build
