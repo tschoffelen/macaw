@@ -13,7 +13,6 @@ module.exports = ({ apiKey }) => {
         subject: options.subject || options.data.subject,
         to: options.to || options.data.to,
         from: options.from || options.data.from,
-        ...data,
         html
       });
     }
