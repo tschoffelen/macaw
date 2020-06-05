@@ -9,10 +9,13 @@ module.exports = ({ apiKey }) => {
   return {
     sendgrid,
     send: function sendViaSendgrid(options) {
+      const { data, html, providerOptions } = options;
+
       return sendgrid.send({
-        subject: options.subject || options.data.subject,
-        to: options.to || options.data.to,
-        from: options.from || options.data.from,
+        subject: providerOptions.subject || data.subject,
+        to: providerOptions.to || data.to,
+        from: providerOptions.from || data.from,
+        ...providerOptions,
         html
       });
     }
