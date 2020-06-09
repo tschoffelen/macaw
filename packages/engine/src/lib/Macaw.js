@@ -78,7 +78,10 @@ class Macaw {
     return Template.load(
       `${templateName}.${this.options.templateFileExtension}`,
       this.options,
-      data
+      {
+        template: templateName,
+        ...data
+      }
     );
   }
 }

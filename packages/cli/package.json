@@ -1,6 +1,6 @@
 {
   "name": "@macaw-email/cli",
-  "version": "1.1.5",
+  "version": "1.1.8",
   "description": "CLI for Macaw.",
   "main": "src/index.js",
   "author": "Thomas Schoffelen <thomas@schof.co>",
@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@includable/open-browser": "^1.1.0",
-    "@macaw-email/engine": "^1.1.5",
+    "@macaw-email/engine": "^1.1.8",
     "@macaw-email/preview-ui": "^1.1.4",
     "chalk": "^3.0.0",
     "chokidar": "^3.3.1",
