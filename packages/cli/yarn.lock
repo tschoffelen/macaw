@@ -452,10 +452,10 @@
     "@types/yargs" "^15.0.0"
     chalk "^3.0.0"
 
-"@macaw-email/engine@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@macaw-email/engine/-/engine-1.1.0.tgz#72de9cb7295a25bd8fe6fafc2079a8546617467a"
-  integrity sha512-4SFm0c0oEwDp5I0bP7Eg3S6A5tpBPSUECSa1wCCuvKvPmfeRxDjLTKDrkHCgaffEs03x4LY69Z9KnTlZKaUU1w==
+"@macaw-email/engine@^1.1.8":
+  version "1.1.8"
+  resolved "https://registry.yarnpkg.com/@macaw-email/engine/-/engine-1.1.8.tgz#0217c1d0775d0c2e050270d91e527241bc101725"
+  integrity sha512-1xDQ9OJenjzjjE6PcgSw4lPp97i+Xh9++JjOV+suNs8Epy07562bSm1EW+3E17RC/G2CyibbMsYNKFy4UIU1qQ==
   dependencies:
     "@macaw-email/storage-fs" "^1.1.0"
     front-matter "^3.1.0"
@@ -463,10 +463,10 @@
     showdown "^1.9.1"
     twig "^1.14.0"
 
-"@macaw-email/preview-ui@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@macaw-email/preview-ui/-/preview-ui-1.1.0.tgz#ccabd53f9a4441d4b4ad22dce5baf199c8481a2c"
-  integrity sha512-w6siE0saBH66p4y+I9++QnYbkkSPUKGPaunzA6ySFVs8vNaFmnZ4pgUO6hU1pWBqfsbymH/gFDWmQ2Ezjn/rjQ==
+"@macaw-email/preview-ui@^1.1.4":
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/@macaw-email/preview-ui/-/preview-ui-1.1.4.tgz#22199ff760dde8a10769d13deef0fe0141c772a4"
+  integrity sha512-Tw6hmaQkJRDng31AT4SAizYowdmxyJEs/8blSCa33Qvvxatkn93KnbI0rBou3jGcs5RR0qU2W/1Dt9H8+whFfw==
 
 "@macaw-email/storage-fs@^1.1.0":
   version "1.1.0"
@@ -3186,9 +3186,9 @@ lodash.unescape@^4.0.1:
   integrity sha1-vyJJiGzlFM2hEvrpIYzcBlIR/Jw=
 
 lodash@^4.17.13, lodash@^4.17.15:
-  version "4.17.15"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
-  integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
+  version "4.17.19"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.19.tgz#e48ddedbe30b3321783c5b4301fbd353bc1e4a4b"
+  integrity sha512-JNvd8XER9GQX0v2qJgsaN/mzFCNA5BRe/j8JN9d+tWyGLSodKQHKFicdwNYzWwI3wjRnaKPsGj1XkBjx/F96DQ==
 
 lolex@^5.0.0:
   version "5.1.2"
