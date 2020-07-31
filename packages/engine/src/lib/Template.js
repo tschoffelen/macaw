@@ -23,6 +23,42 @@ class Template {
   constructor(options, data) {
     this.options = options;
     this.data = data;
+    this.includesCache = {};
+  }
+
+  async resolveIncludes(str) {
+    const regex = /\{%\s+?includes?\s+('|")([^'"]+)('|")\s+?%\}/;
+    while (str.match(regex)) {
+      const result = str.match(regex);
+      const { index } = result;
+      const [match, , includePath] = result;
+      const fullIncludePath = `${this.options.layoutsDirectory}/partials/${includePath}.mjml`;
+      this.includesCache[fullIncludePath] = await this.options.storage.getItem(
+        fullIncludePath
+      );
+      str = `${str.substr(
+        0,
+        index
+      )}<!--macawincludes:"${fullIncludePath}"-->${str.substr(
+        index + match.length
+      )}`;
+    }
+
+    return str;
+  }
+
+  applyIncludes(str) {
+    const regex = /(<p>\s+?)?\<!--macawincludes:"([^"]+)"-->(\s+?<\/p>)?/;
+    while (str.match(regex)) {
+      const result = str.match(regex);
+      const { index } = result;
+      const [match, , fullIncludePath] = result;
+      str = `${str.substr(0, index)}${
+        this.includesCache[fullIncludePath]
+      }${str.substr(index + match.length)}`;
+    }
+
+    return str;
   }
 
   /**
@@ -35,14 +71,16 @@ class Template {
     const content = await this.options.storage.getItem(templatePath);
     const { attributes, body } = fm(content);
     this.data = { ...attributes, ...this.data };
-    this.markdown = body;
+    this.markdown = await this.resolveIncludes(body);
 
     if (!this.data.layout) {
       this.data.layout = "default";
     }
 
     this.layoutFilePath = `${this.options.layoutsDirectory}/${this.data.layout}.mjml`;
-    this.mjml = await this.options.storage.getItem(this.layoutFilePath);
+    this.mjml = await this.resolveIncludes(
+      await this.options.storage.getItem(this.layoutFilePath)
+    );
   }
 
   /**
@@ -53,9 +91,14 @@ class Template {
   render() {
     const markdown = twig({ data: this.markdown }).render(this.data);
     const converter = new showdown.Converter(this.options.markdown);
-    const body = converter.makeHtml(markdown);
+    const body = twig({
+      data: this.applyIncludes(converter.makeHtml(markdown))
+    }).render(this.data);
 
-    const mjml = twig({ data: this.mjml }).render({ ...this.data, body });
+    const mjml = twig({ data: this.applyIncludes(this.mjml) }).render({
+      ...this.data,
+      body
+    });
     const { html, errors } = mjml2html(mjml, {
       ...this.options.mjml
     });
