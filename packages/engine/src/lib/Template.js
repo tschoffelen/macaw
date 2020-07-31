@@ -25,6 +25,21 @@ class Template {
     this.data = data;
   }
 
+  async resolveIncludes(str) {
+    const regex = /\{%\s+?includes?\s+('|")([^'"]+)('|")\s+?%\}/;
+    while (str.match(regex)) {
+      const result = str.match(regex);
+      const { index } = result;
+      const [match, , includePath] = result;
+      const fullIncludePath = `${this.options.layoutsDirectory}/partials/${includePath}.mjml`;
+      const newSubstr = await this.options.storage.getItem(fullIncludePath);
+      str = `${str.substr(0, index)}${newSubstr}${str.substr(
+        index + match.length
+      )}`;
+    }
+    return str;
+  }
+
   /**
    * Load a template file and its layout from the storage engine.
    *
@@ -35,14 +50,16 @@ class Template {
     const content = await this.options.storage.getItem(templatePath);
     const { attributes, body } = fm(content);
     this.data = { ...attributes, ...this.data };
-    this.markdown = body;
+    this.markdown = await this.resolveIncludes(body);
 
     if (!this.data.layout) {
       this.data.layout = "default";
     }
 
     this.layoutFilePath = `${this.options.layoutsDirectory}/${this.data.layout}.mjml`;
-    this.mjml = await this.options.storage.getItem(this.layoutFilePath);
+    this.mjml = await this.resolveIncludes(
+      await this.options.storage.getItem(this.layoutFilePath)
+    );
   }
 
   /**
