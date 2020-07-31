@@ -48,6 +48,16 @@ test("template renders with vars", async () => {
   expect(html).toContain("Hello, John!");
 });
 
+test("template renders with partial", async () => {
+  const template = await Template.load("example-partial.md", defaultOptions, {
+    name: "Peter"
+  });
+
+  const html = template.render();
+
+  expect(html).toContain("Hello, Peter");
+});
+
 test("template renders layout with vars", async () => {
   const template = await Template.load(
     "example-twig-subject.md",
