@@ -15,17 +15,16 @@ window.jsonlint = jsonlint;
 
 const socket = socketio(window.location.host.replace(":3000", ":4000"));
 
-function App() {
-  const defaultJson = JSON.stringify(
-    {
-      subject: "Hello, world",
-      to: { name: "John", email: "john@example.com" }
-    },
-    null,
-    2
-  );
+let defaultData = {
+  subject: "Hello, world",
+  to: { name: "John", email: "john@example.com" }
+};
 
-  const [json, setJson] = useState(localStorage.lastJson || defaultJson);
+const defaultJson = JSON.stringify(defaultData, null, 2);
+
+function App() {
+  const [initialJson, setInitialJson] = useState(defaultJson);
+  const [json, setJson] = useState(defaultJson);
   const [mode, setMode] = useState("responsive");
   const [template, setTemplate] = useState(localStorage.lastTemplate || "");
   const [templates, setTemplates] = useState([]);
@@ -68,6 +67,18 @@ function App() {
       }
     }
   }, [template, json, iframe]);
+  useEffect(() => {
+    try {
+      if (localStorage[`lastJson${template}`]) {
+        defaultData = JSON.parse(localStorage[`lastJson${template}`]);
+      }
+      const defaultJson = JSON.stringify(defaultData, null, 2);
+      setInitialJson(defaultJson);
+      setJson(defaultJson);
+    } catch (e) {
+      // do nothing
+    }
+  }, [template]);
 
   return (
     <>
@@ -229,10 +240,10 @@ function App() {
           <section>
             <h3>JSON data</h3>
             <CodeMirror
-              value={defaultJson}
+              value={initialJson}
               onChange={(editor, data, value) => {
                 setJson(value);
-                localStorage.lastJson = value;
+                localStorage[`lastJson${template}`] = value;
               }}
               options={{
                 mode: "application/json",
