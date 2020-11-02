@@ -48,6 +48,38 @@ test("template renders with vars", async () => {
   expect(html).toContain("Hello, John!");
 });
 
+test("template renders frontmatter with twig", async () => {
+  const template = await Template.load(
+    "example-twig-frontmatter.md",
+    defaultOptions,
+    { name: "Bob" }
+  );
+
+  expect(template.data.subject).toEqual("Hello Bob!");
+});
+
+test("template renders frontmatter with twig (complex)", async () => {
+  const template = await Template.load(
+    "example-twig-frontmatter-2.md",
+    defaultOptions,
+    { email: "bob@andrews.com" }
+  );
+
+  expect(template.data.fromName).toEqual("Bob");
+  expect(template.data.fromEmail).toEqual("bob@andrews.com");
+});
+
+test("template renders frontmatter with twig (defaults)", async () => {
+  const template = await Template.load(
+    "example-twig-frontmatter-2.md",
+    defaultOptions,
+    {}
+  );
+
+  expect(template.data.fromName).toEqual("Mark");
+  expect(template.data.fromEmail).toEqual("mark@example.com");
+});
+
 test("template renders with partial", async () => {
   const template = await Template.load("example-partial.md", defaultOptions, {
     name: "Peter"
@@ -139,4 +171,14 @@ test("template send throws error if no provider set", async () => {
   };
 
   expect(callSend).toThrow(/no provider set/i);
+});
+
+test("template with invalid frontmatter uses default layout", async () => {
+  const template = await Template.load(
+    "example-invalid-frontmatter.md",
+    defaultOptions,
+    {}
+  );
+
+  expect(template.layoutFilePath).toEqual("layouts/default.mjml");
 });

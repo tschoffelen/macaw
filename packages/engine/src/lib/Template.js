@@ -1,8 +1,8 @@
-const fm = require("front-matter");
 const showdown = require("showdown");
 const mjml2html = require("mjml");
-const Twig = require("twig");
-const twig = Twig.twig;
+const { twig } = require("twig");
+
+const fm = require("./Frontmatter");
 
 /**
  * Constructor for the Macaw template instance.
@@ -68,9 +68,14 @@ class Template {
    * @returns {Promise<void>}
    */
   async loadFile(templatePath) {
+    // Load file from storage
     const content = await this.options.storage.getItem(templatePath);
-    const { attributes, body } = fm(content);
+
+    // Get Frontmatter
+    const { attributes, body } = fm(content, this.data);
     this.data = { ...attributes, ...this.data };
+
+    // Resolve include tags in markdown body
     this.markdown = await this.resolveIncludes(body);
 
     if (!this.data.layout) {
