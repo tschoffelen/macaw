@@ -82,7 +82,8 @@ section:last-child {
   user-select: none;
 }
 
-.select select {
+.select select,
+button.styled-button {
   display: block;
   appearance: none;
   width: calc(100% + 8px);
@@ -107,11 +108,22 @@ section:last-child {
   pointer-events: none;
 }
 
+.options {
+  display: flex;
+}
+
+.options .styled-button {
+  width: auto;
+  padding: 0 16px;
+  margin-right: 18px;
+}
+
 .toggle {
   border: 4px solid #2a2e38;
   background: #2a2e38;
   border-radius: 10px;
   display: flex;
+  flex: 1;
   margin: 0 -4px;
   user-select: none;
 }
@@ -123,8 +135,7 @@ section:last-child {
   outline: 0;
   flex: 1;
   flex-basis: 33%;
-  height: 64px;
-  padding-top: 43px;
+  height: 40px;
   text-align: center;
   border-radius: 6px;
   font-size: 11px;
@@ -148,10 +159,7 @@ section:last-child {
 }
 
 .toggle button svg {
-  position: absolute;
-  top: 24%;
-  transform: translateX(-50%);
-  left: 50%;
+  zoom: 0.8;
 }
 
 .toggle button svg path[fill-rule="nonzero"] {
@@ -162,20 +170,11 @@ section:last-child {
   fill: #171a23 !important;
 }
 
-.toggle button:first-child svg {
-  top: 22%;
-}
-
-.toggle button:last-child svg {
-  top: 17%;
-}
-
 .cm-s-material-darker.CodeMirror {
-  background-color: #2b2e37;
+  background-color: #2a2e38;
   border-radius: 10px;
   line-height: 1.6;
-  margin: -4px;
-  margin-top: 0;
+  margin: 0 -4px -4px;
   height: auto;
   min-height: 240px;
 }
