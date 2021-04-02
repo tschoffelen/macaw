@@ -463,10 +463,12 @@
     showdown "^1.9.1"
     twig "^1.14.0"
 
-"@macaw-email/preview-ui@^1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@macaw-email/preview-ui/-/preview-ui-1.2.1.tgz#8da161e9ad4badda9e46bf5afaa682747676ef7c"
-  integrity sha512-lpSxrrfQXCYp/PA1kneYTlIIzu6RXm7975vYv2JJZpMeb3Xoyg2TQZNDa+ObFHEly1Y0oF/rl86jnvuF9oaAbg==
+"@macaw-email/preview-ui@^1.3.1":
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/@macaw-email/preview-ui/-/preview-ui-1.3.1.tgz#0db6e3e43c8566a1d24bc0c495f4bb3dce171ed9"
+  integrity sha512-W7Ofy1CqJmduHiquyD9f30x7eP5luO5nBKvRgApablych9CYSZm5+9mLOWr2f8biu1Tv2mZ+Jx3hTvoPtZIR+w==
+  dependencies:
+    file-saver "^2.0.5"
 
 "@macaw-email/storage-fs@^1.1.0":
   version "1.1.0"
@@ -1864,6 +1866,11 @@ fb-watchman@^2.0.0:
   integrity sha512-DkPJKQeY6kKwmuMretBhr7G6Vodr7bFwDYTXIkfG1gjvNpaxBTQV3PbXg6bR1c1UP4jPOX0jHUbbHANL9vRjVg==
   dependencies:
     bser "2.1.1"
+
+file-saver@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/file-saver/-/file-saver-2.0.5.tgz#d61cfe2ce059f414d899e9dd6d4107ee25670c38"
+  integrity sha512-P9bmyZ3h/PRG+Nzga+rbdI4OEpNDzAVyy74uVO9ATgzLK6VtAsYybF/+TOCvrc0MO793d6+42lLyZTw7/ArVzA==
 
 fill-range@^4.0.0:
   version "4.0.0"
@@ -5251,9 +5258,9 @@ xtend@^4.0.2:
   integrity sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ==
 
 y18n@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/y18n/-/y18n-4.0.0.tgz#95ef94f85ecc81d007c264e190a120f0a3c8566b"
-  integrity sha512-r9S/ZyXu/Xu9q1tYlpsLIsa3EeLXXk0VwlxqTcFRfg9EhMW+17kbt9G0NrgCmhGb5vT2hyhJZLfDGx+7+5Uj/w==
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/y18n/-/y18n-4.0.1.tgz#8db2b83c31c5d75099bb890b23f3094891e247d4"
+  integrity sha512-wNcy4NvjMYL8gogWWYAO7ZFWFfHcbdbE57tZO8e4cbpj8tfUcwrwqSl3ad8HxpYWCdXcJUCeKKZS62Av1affwQ==
 
 yallist@^2.1.2:
   version "2.1.2"
