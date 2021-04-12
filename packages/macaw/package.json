@@ -1,6 +1,6 @@
 {
   "name": "macaw",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "description": "Scalable email tooling for transactional emails.",
   "main": "./index.js",
   "author": "Thomas Schoffelen <thomas@schof.co>",
@@ -32,7 +32,7 @@
     "postpublish": "rm -rf README.md"
   },
   "dependencies": {
-    "@macaw-email/cli": "^1.3.1",
-    "@macaw-email/engine": "^1.3.0"
+    "@macaw-email/cli": "^1.3.2",
+    "@macaw-email/engine": "^1.3.2"
   }
 }
