@@ -1,0 +1,7 @@
+{% spaceless %}
+    {% if name %}
+        {{ name | lower }}@acme.inc
+    {% else %}
+        noreply@acme.inc
+    {% endif %}
+{% endspaceless %}

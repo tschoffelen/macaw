@@ -90,6 +90,26 @@ test("template renders with partial", async () => {
   expect(html).toContain("Hello, Peter");
 });
 
+test("template renders with partial in frontmatter", async () => {
+  const template = await Template.load(
+    "example-twig-frontmatter-3.md",
+    defaultOptions,
+    {
+      name: "Peter"
+    }
+  );
+
+  expect(template.data.fromEmail).toEqual("peter@acme.inc");
+
+  const template2 = await Template.load(
+    "example-twig-frontmatter-3.md",
+    defaultOptions,
+    {}
+  );
+
+  expect(template2.data.fromEmail).toEqual("noreply@acme.inc");
+});
+
 test("template renders layout with vars", async () => {
   const template = await Template.load(
     "example-twig-subject.md",

@@ -72,7 +72,10 @@ class Template {
     const content = await this.options.storage.getItem(templatePath);
 
     // Get Frontmatter
-    const { attributes, body } = fm(content, this.data);
+    const { attributes, body } = await fm(content, this.data, [
+      this.resolveIncludes.bind(this),
+      this.applyIncludes.bind(this)
+    ]);
     this.data = { ...attributes, ...this.data };
 
     // Resolve include tags in markdown body

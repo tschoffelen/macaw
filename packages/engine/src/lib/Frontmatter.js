@@ -24,7 +24,7 @@ const computeLocation = (match, body) => {
   return line;
 };
 
-const parse = (string, data) => {
+const parse = async (string, data, preprocess) => {
   const match = regex.exec(string);
   if (!match) {
     return {
@@ -34,12 +34,17 @@ const parse = (string, data) => {
     };
   }
 
-  const yaml = match[match.length - 1].replace(/^\s+|\s+$/g, "");
+  let yaml = match[match.length - 1].replace(/^\s+|\s+$/g, "");
   let parsedYaml = yaml;
   try {
+    if (preprocess) {
+      yaml = await preprocess[0](yaml);
+      yaml = await preprocess[1](yaml);
+    }
     parsedYaml = twig({ data: yaml }).render(data);
   } catch (e) {
     // revert to plain string
+    console.log(e);
   }
   const attributes = parser.load(parsedYaml) || {};
   const body = string.replace(match[0], "");
@@ -53,12 +58,12 @@ const parse = (string, data) => {
   };
 };
 
-module.exports = (string, data = {}) => {
+module.exports = async (string, data = {}, preprocess) => {
   string = string || "";
 
   const lines = string.split(/(\r?\n)/);
   if (lines[0] && /= yaml =|---/.test(lines[0])) {
-    return parse(string, data);
+    return parse(string, data, preprocess);
   }
 
   return {
