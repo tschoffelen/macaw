@@ -27,7 +27,7 @@ class Template {
   }
 
   async resolveIncludes(str) {
-    const regex = /\{%\s+?includes?\s+('|")([^'"]+)('|")\s+?%\}/;
+    const regex = /{\s?%\s+?includes?\s+(['"])([^'"]+)(['"])\s+?%\s?\}/;
     while (str.match(regex)) {
       const result = str.match(regex);
       const { index } = result;
@@ -48,7 +48,7 @@ class Template {
   }
 
   applyIncludes(str) {
-    const regex = /(<p>\s+?)?\<!--macawincludes:"([^"]+)"-->(\s+?<\/p>)?/;
+    const regex = /(<p>\s+?)?<!--macawincludes:"([^"]+)"-->(\s+?<\/p>)?/;
     while (str.match(regex)) {
       const result = str.match(regex);
       const { index } = result;
