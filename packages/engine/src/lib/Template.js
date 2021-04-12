@@ -43,7 +43,6 @@ class Template {
         index + match.length
       )}`;
     }
-
     return str;
   }
 
