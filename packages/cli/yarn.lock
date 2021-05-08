@@ -452,10 +452,10 @@
     "@types/yargs" "^15.0.0"
     chalk "^3.0.0"
 
-"@macaw-email/engine@^1.3.0":
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/@macaw-email/engine/-/engine-1.3.0.tgz#52f927dad198aad0212d468710265709669d206c"
-  integrity sha512-z5ZY6os1LMb36UgwxnUyd25Gy4l+MrV6LyWCRvD7NaR05rRvZG4rFJI5kiBf6rW+ZM4OLomBUIBLqAPm6Cm/jg==
+"@macaw-email/engine@^1.4.0":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/@macaw-email/engine/-/engine-1.4.0.tgz#ba4eae4bdfc349f35daf231b3241b8ee26292091"
+  integrity sha512-pQAzDLrkQx0UwDKfEZ+AOHZ68yh9mMku02UZ82p5qhb18Yfm1TN52APZaBzArLWD3cMYj17uLlG95ATEtkhR6w==
   dependencies:
     "@macaw-email/storage-fs" "^1.1.0"
     js-yaml "^3.14.0"
@@ -3177,9 +3177,9 @@ lodash.unescape@^4.0.1:
   integrity sha1-vyJJiGzlFM2hEvrpIYzcBlIR/Jw=
 
 lodash@^4.17.13, lodash@^4.17.15:
-  version "4.17.19"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.19.tgz#e48ddedbe30b3321783c5b4301fbd353bc1e4a4b"
-  integrity sha512-JNvd8XER9GQX0v2qJgsaN/mzFCNA5BRe/j8JN9d+tWyGLSodKQHKFicdwNYzWwI3wjRnaKPsGj1XkBjx/F96DQ==
+  version "4.17.21"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
+  integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
 
 lolex@^5.0.0:
   version "5.1.2"
