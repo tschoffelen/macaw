@@ -65,3 +65,19 @@ Take a look at the files created in the `emails` directory, and use the document
 - [Template storage sources](docs/storage.md)
 - [Custom provider implementations](docs/custom-provider.md)
 - [API classes reference](docs/api.md)
+
+
+
+<br /><br />
+
+---
+
+<div align="center">
+	<b>
+		<a href="https://schof.co/consulting/?utm_source=macaw-email/macaw">Get professional support for this package →</a>
+	</b>
+	<br>
+	<sub>
+		Custom consulting sessions availabe for implementation support and feature development.
+	</sub>
+</div>
