@@ -24,9 +24,7 @@
   "engines": {
     "node": ">=10"
   },
-  "bin": {
-    "macaw": "./cli.js"
-  },
+  "bin": "./cli.js",
   "scripts": {
     "prepublishOnly": "cp ../../README.md README.md",
     "postpublish": "rm -rf README.md"

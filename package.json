@@ -10,6 +10,12 @@
     "lint-staged": ">=10",
     "prettier": "^1.19.1"
   },
+  "resolutions": {
+    "uglify-js": "file:./packages/uglify-js-noop"
+  },
+  "overrides": {
+    "uglify-js": "file:./packages/uglify-js-noop"
+  },
   "engines": {
     "node": ">=10"
   },

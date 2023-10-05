@@ -28,5 +28,8 @@
   },
   "devDependencies": {
     "jest": "^24.9.0"
+  },
+  "overrides": {
+    "uglify-js": "file:../uglify-js-noop"
   }
 }
