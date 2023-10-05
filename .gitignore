@@ -3,7 +3,6 @@ lib-cov
 coverage
 *.lcov
 node_modules
-.env
 package-lock.json
 build
 packages/cli/emails
