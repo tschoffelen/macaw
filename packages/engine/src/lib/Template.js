@@ -6,7 +6,6 @@ const fm = require("./Frontmatter");
 
 /**
  * Constructor for the Macaw template instance.
- *
  * Rather than initiating this class directly, use the `template` factory
  * method in the `Macaw` class.
  *
